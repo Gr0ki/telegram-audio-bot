@@ -8,7 +8,7 @@ bot = telebot.TeleBot(TOKEN, parse_mode=None)
 audio_commands = '''
         /amongus
         /virus
-        /FBI
+        /fbi
         /scream
         /boiii
         /wow
@@ -40,7 +40,7 @@ def among_us_command_handler(message):
     bot.send_audio(message.chat.id, audio)
 
 
-@bot.message_handler(commands=['FBI'])
+@bot.message_handler(commands=['fbi'])
 def among_us_command_handler(message):
     audio = open('./audio/fbi.mp3', 'rb')
     bot.send_audio(message.chat.id, audio)
