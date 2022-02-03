@@ -1,0 +1,7 @@
+/venv/
+/.idea/
+/__pycache__/
+
+secret.py
+/audio/*
+!/audio/.gitkeep
