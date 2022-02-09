@@ -7,13 +7,18 @@ bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 audio_commands = '''
         /amongus
-        /virus
         /fbi
-        /scream
         /boiii
         /wow
+        /denied
+        /sad
+        /continued
+        /respect
         /bullshit
-        /money'''
+        /money
+        /connection
+        /virus
+        /bot'''
 
 
 @bot.message_handler(commands=['start'])
@@ -64,6 +69,36 @@ def among_us_command_handler(message):
     bot.send_voice(message.chat.id, audio)
 
 
+@bot.message_handler(commands=['denied'])
+def among_us_command_handler(message):
+    audio = open('./audio/denied.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
+@bot.message_handler(commands=['sad'])
+def among_us_command_handler(message):
+    audio = open('./audio/sad.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
+@bot.message_handler(commands=['connection'])
+def among_us_command_handler(message):
+    audio = open('./audio/connection.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
+@bot.message_handler(commands=['continued'])
+def among_us_command_handler(message):
+    audio = open('./audio/continued.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
+@bot.message_handler(commands=['respect'])
+def among_us_command_handler(message):
+    audio = open('./audio/respect.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
 @bot.message_handler(commands=['bullshit'])
 def among_us_command_handler(message):
     audio = open('./audio/всё-хуйня.mp3', 'rb')
@@ -73,6 +108,12 @@ def among_us_command_handler(message):
 @bot.message_handler(commands=['money'])
 def among_us_command_handler(message):
     audio = open('./audio/денег-не-даст.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
+
+
+@bot.message_handler(commands=['bot'])
+def among_us_command_handler(message):
+    audio = open('./audio/bot.mp3', 'rb')
     bot.send_voice(message.chat.id, audio)
 
 
