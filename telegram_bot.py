@@ -6,7 +6,7 @@ bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 
 audio_commands = '''
-        /amongus
+        /anthem
         /fbi
         /boiii
         /wow
@@ -14,11 +14,8 @@ audio_commands = '''
         /sad
         /continued
         /respect
-        /bullshit
-        /money
         /connection
-        /virus
-        /bot'''
+        '''
 
 
 @bot.message_handler(commands=['start'])
@@ -31,6 +28,12 @@ def handle_start_help(message):
 @bot.message_handler(commands=['help'])
 def handle_start_help(message):
     bot.send_message(message.chat.id, 'Список команд: ' + audio_commands)
+
+
+@bot.message_handler(commands=['anthem'])
+def among_us_command_handler(message):
+    audio = open('./audio/Ukraine-2022.mp3', 'rb')
+    bot.send_voice(message.chat.id, audio)
 
 
 @bot.message_handler(commands=['amongus'])
